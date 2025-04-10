@@ -1,6 +1,6 @@
 from ase.io import read, write  # Import read and write functions from ASE for handling atomic structures
 import numpy as np  # Import numpy for numerical operations
-from lammps_calculator import  NLayerCalculator  # Import custom calculators from moirecompare package
+from n_layer_calculator import  NLayerCalculator  # Import custom calculators from moirecompare package
 from lammps_calculator import (MonolayerLammpsCalculator, 
                                       InterlayerLammpsCalculator) # Import custom calculators from moirecompare package
 from ase.optimize import FIRE # Import optimization algorithms from ASE
