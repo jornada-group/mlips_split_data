@@ -20,4 +20,13 @@ The `relax_structures` directory provides tools for relaxing layered material st
 - Working with the example structures and potentials
 - Implementing your own relaxation workflows
 
+## Figure Data and Scripts
+The `figure_data_and_scripts` directory contains the data and plotting scripts needed to reproduce the following figure panels from the paper:
 
+- **fig3_disregistry_1p1deg** (Fig. 3d, 3e) — Disregistry magnitude plots for MoS₂/WSe₂ at 1.1° twist angle comparing reference, UM1, and UM2 relaxed structures. Run `plot_fig3d.py`, `plot_fig3e_UM1.py`, `plot_fig3e_UM2.py`.
+- **fig3_rmse_vs_mde** (Fig. 3f) — Energy/force RMSE vs. mean disregistry error for corrupted MLIPs. Run `./generate_figures.sh`. Note: requires corrupted MLIP trajectory files (not included due to size; regenerate using `surrogate_models/corrupt_models.py`).
+- **fig4_q1D_vs_2D_mde** (Fig. 4d) — MDE comparison for q1D vs. 2D relaxed MoS₂/WSe₂ structures. Run `./generate_figures.sh`.
+- **fig6_2D_disregistry** (Fig. 6d) — 2D disregistry magnitude map for MLIP-relaxed GaS/HfS₂ moiré. Run `python plot_fig6d.py`.
+- **fig6_band_structures** (Fig. 6b, 6c) — Quantum ESPRESSO input files and structures for GaS/HfS₂ band structure calculations at three geometries (unrelaxed, MLIP-relaxed, DFT-relaxed).
+
+See `figure_data_and_scripts/README.md` for full details.
