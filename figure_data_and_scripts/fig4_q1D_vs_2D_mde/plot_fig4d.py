@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
-import matplotlib.colors as mcolors
 
 plt.style.use("../matplotlib.rc")
 
@@ -71,7 +70,6 @@ def calculate_error_bars(median, q25, q75):
 
 c_distances_list_1D_interlayer_mean = [np.mean([x for x in c if x is not None]) for c in c_distances_list_1D_interlayer[start_ind:end_ind]]
 c_distances_list_2D_interlayer_mean = [np.mean([x for x in c if x is not None]) for c in c_distances_list_2D_interlayer[start_ind:end_ind]]
-print(c_distances_list_2D_interlayer_mean)
 c_distances_list_1D_intralayer_mean = [np.mean([x for x in c if x is not None]) for c in c_distances_list_1D_intralayer[start_ind:end_ind]]
 c_distances_list_2D_intralayer_mean = [np.mean([x for x in c if x is not None]) for c in c_distances_list_2D_intralayer[start_ind:end_ind]]
 
@@ -152,7 +150,7 @@ plt.xlim(3e-5, 2.)
 plt.ylim(3e-5, 2.)
 
 cbar = plt.colorbar(sc1, shrink=1.0, pad=0.01)
-cbar.set_label('Model Corruption Factor')
+cbar.set_label('Model Weight Corruption Factor')
 log_ticks = np.logspace(-5, 0, 6)
 cbar.set_ticks(log_ticks)
 cbar.set_ticklabels([f'$10^{{{int(np.log10(x))}}}$' for x in log_ticks])
@@ -164,7 +162,7 @@ plt.ylabel('2D Mean Disregistry Error (Å)')
 plt.legend(loc='upper left', labelspacing=0.1, handletextpad=-0.2)
 plt.grid(True, which='major', linestyle='-', linewidth=0.5)
 
-plt.savefig('fig4d_mde_mean.pdf', dpi=300)
+plt.savefig('fig4d_mde_mean.pdf', dpi=300, transparent=True)
 plt.close()
 
 
@@ -254,7 +252,7 @@ plt.xlim(3e-5, 2.)
 plt.ylim(3e-5, 2.)
 
 cbar = plt.colorbar(sc1, pad=0.00, shrink=1.0)
-cbar.set_label('Model Corruption Factor')
+cbar.set_label('Model Weight Corruption Factor')
 log_ticks = np.logspace(-5, 0, 6)
 cbar.set_ticks(log_ticks)
 cbar.ax.tick_params(which='both', direction='in')
@@ -266,5 +264,5 @@ plt.xlabel('1D Median Disregistry Error (Å)')
 plt.ylabel('2D Median Disregistry Error (Å)')
 plt.legend(loc='upper left', labelspacing=0.1, handletextpad=-0.2)
 
-plt.savefig('fig4d_mde_median.pdf', dpi=300)
+plt.savefig('fig4d_mde_median.pdf', dpi=300, transparent=True)
 plt.close()

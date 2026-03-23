@@ -20,11 +20,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from ase.io import read
 import os
-import matplotlib.colors as colors
 import matplotlib.colors as mcolors
 
-FIG_WIDTH = 4.2
-FIG_HEIGHT = 3.5
+FIG_SIZE = (4.2, 3.5)
 
 plt.style.use("../matplotlib.rc")
 
@@ -259,9 +257,9 @@ def generate_gradient(color_hex, width=256, height=100, horizontal=False):
 # Figure 1: Energy RMSE vs MDE
 # ---------------------------------------------------------------------------
 
-norm = colors.LogNorm(vmin=1e-5, vmax=1e0)
+norm = mcolors.LogNorm(vmin=1e-5, vmax=1e0)
 
-plt.figure(figsize=(FIG_WIDTH, FIG_HEIGHT), layout="constrained")
+plt.figure(figsize=FIG_SIZE, layout="constrained")
 
 sc1 = plt.scatter(e_intra_median, d_intra_median,
                   c=corruption_facs, cmap=plt.colormaps['Reds'], norm=norm,
@@ -326,7 +324,7 @@ print("Saved fig3f_energy_rmse_vs_mde.pdf")
 # Figure 2: Force RMSE vs MDE
 # ---------------------------------------------------------------------------
 
-plt.figure(figsize=(FIG_WIDTH, FIG_HEIGHT), layout="constrained")
+plt.figure(figsize=FIG_SIZE, layout="constrained")
 
 sc1 = plt.scatter(f_intra_median, d_intra_median,
                   c=corruption_facs, cmap=plt.colormaps['Reds'], norm=norm,

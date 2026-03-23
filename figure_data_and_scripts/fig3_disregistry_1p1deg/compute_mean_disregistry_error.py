@@ -1,9 +1,9 @@
 import time
 import os
-from ase.io import read, write  
+from ase.io import read
 import numpy as np
-import matplotlib.pyplot as plt 
-from scipy.optimize import minimize, linear_sum_assignment
+import matplotlib.pyplot as plt
+from scipy.optimize import linear_sum_assignment
 from scipy.spatial import Voronoi, cKDTree, voronoi_plot_2d, Delaunay
 from scipy.spatial.distance import cdist
 from scipy.interpolate import RBFInterpolator

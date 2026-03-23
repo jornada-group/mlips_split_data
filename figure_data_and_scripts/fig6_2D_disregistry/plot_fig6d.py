@@ -94,7 +94,7 @@ def main():
         ticks=[0, 0.6, 1.2, 1.8],
     )
 
-    plt.savefig('fig6d_2D_disregistry_magnitude.png', dpi=1200, transparent=True)
+    plt.savefig('fig6d_2D_disregistry_magnitude.pdf', dpi=300, transparent=True)
     plt.close()
 
 

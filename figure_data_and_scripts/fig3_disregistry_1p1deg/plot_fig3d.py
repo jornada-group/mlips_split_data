@@ -89,7 +89,7 @@ def main():
                        ticks=[0, 0.05, 0.10, 0.15])
     cbar.ax.set_xlabel('Displacement (nm)', labelpad=2)
     
-    plt.savefig('fig3d_disregistry_magnitude.pdf', dpi=600, transparent=True)
+    plt.savefig('fig3d_disregistry_magnitude.pdf', dpi=300, transparent=True)
     plt.close()
     print("Figure saved as 'fig3d_disregistry_magnitude.pdf'")
 

@@ -18,8 +18,8 @@ The shared `matplotlib.rc` style file must remain at this level (`../matplotlib.
 **Run:**
 ```bash
 python plot_fig3d.py          # fig3d_disregistry_magnitude.pdf
-python plot_fig3e_UM1.py      # fig3e_disregistry_UM1.png
-python plot_fig3e_UM2.py      # fig3e_disregistry_UM2.png
+python plot_fig3e_UM1.py      # fig3e_disregistry_UM1.pdf
+python plot_fig3e_UM2.py      # fig3e_disregistry_UM2.pdf
 ```
 
 `compute_mean_disregistry_error.py` computes mean disregistry error statistics (used by `plot_fig3d.py`).
@@ -55,6 +55,8 @@ python plot_fig3e_UM2.py      # fig3e_disregistry_UM2.png
 - `MoS2-WSe2_2D_interlayer_disregistry_distances.npy`
 - `MoS2-WSe2_2D_intralayer_disregistry_distances.npy`
 
+**Note:** The `.npy` inputs are pre-computed Wasserstein MDE values for each corruption level. They can be regenerated using the Voronoi-interpolation and Wasserstein-distance routines in `../fig3_disregistry_1p1deg/compute_mean_disregistry_error.py` applied to the corrupted trajectories from `../../surrogate_models/`.
+
 **Run:**
 ```bash
 ./generate_figures.sh         # calls plot_fig4d.py
@@ -72,7 +74,7 @@ python plot_fig3e_UM2.py      # fig3e_disregistry_UM2.png
 
 **Run:**
 ```bash
-python plot_fig6d.py          # fig6d_2D_disregistry_magnitude_reference.png
+python plot_fig6d.py          # fig6d_2D_disregistry_magnitude.pdf
 ```
 
 ---

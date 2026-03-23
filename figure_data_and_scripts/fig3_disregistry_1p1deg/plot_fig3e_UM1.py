@@ -15,7 +15,6 @@ from scipy.optimize import linear_sum_assignment
 from scipy.interpolate import RBFInterpolator
 from scipy.spatial.distance import cdist
 import os
-from matplotlib.collections import LineCollection
 import matplotlib.colors as mcolors
 
 plt.style.use("../matplotlib.rc")
@@ -25,7 +24,7 @@ plt.rcParams['savefig.dpi'] = 300
 displacement_magnitude_cmap = plt.cm.YlGn
 
 
-def convert_string_to_array(string):
+def convert_lattice_string_to_array(string):
     return np.array([float(x) for x in string.strip('[]').split()]).reshape(2, 2)
 
 def pad_periodic_image(pos, box, n_a1=1, n_a2=1):
@@ -127,7 +126,7 @@ def voronoi_interpolation(relaxed_points, unrelaxed_points,
 
 
 def create_displacement_plot(displacements_list, A1, confined_displacements_energy, energies,
-                             output_file='fig3e_disregistry_UM1.png',
+                             output_file='fig3e_disregistry_UM1.pdf',
                              use_magnitude_colors=True):
     pristine_cell = get_primitive_voronoi_cell(A1)
     centroid = np.mean(pristine_cell, axis=0)
@@ -203,7 +202,7 @@ def create_displacement_plot(displacements_list, A1, confined_displacements_ener
 def main():
     start_time = time.time()
     reference_structure = read("MoS2-WSe2_1p1deg_reference.xyz", index='-1', format='extxyz')
-    A1 = convert_string_to_array(reference_structure.info['base_lattice_0'])
+    A1 = convert_lattice_string_to_array(reference_structure.info['base_lattice_0'])
     atom_types = reference_structure.arrays['atom_types']
     pristine_cell = get_primitive_voronoi_cell(A1)
 
@@ -228,7 +227,7 @@ def main():
     energies = np.array(energies)
     energies -= np.max(energies)
 
-    cache_file = 'displacements_list_UM1.npy'
+    cache_file = 'MoS2-WSe2_1p1deg_displacements_UM1.npy'
     if os.path.isfile(cache_file):
         displacements_list = np.load(cache_file)
         print(f"Loaded cached displacements from '{cache_file}'")
