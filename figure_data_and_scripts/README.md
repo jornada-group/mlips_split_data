@@ -6,6 +6,23 @@ The shared `matplotlib.rc` style file must remain at this level (`../matplotlib.
 
 ---
 
+## fig2_violin_plots — Fig. 2, SI Fig. 2
+
+**Generates:** Violin plots comparing intralayer (WSe₂) and interlayer (MoS₂/WSe₂) energy and force residuals across models: random guessing, classical potentials (Stillinger-Weber / Kolmogorov-Crespi), and unified/split Allegro and MACE MLIPs.
+
+**Data:**
+- `data/baseline_all_test_2.xyz` — DFT reference test set
+- `data/intra_WSe2/` — intralayer model predictions (5 files)
+- `data/inter_MoS2WSe2/` — interlayer model predictions (5 files)
+
+**Run:**
+```bash
+python plot_fig2.py       # fig_2_v8.pdf, fig_2_v8.png  (2×1: energy, intra + inter)
+python plot_fig_si2.py    # fig_si_2.pdf, fig_si_2.png  (2×2: energy + forces, intra + inter, adds Split MACE)
+```
+
+---
+
 ## fig3_disregistry_1p1deg — Fig. 3d, 3e
 
 **Generates:** Disregistry magnitude plots for MoS₂/WSe₂ at 1.1° twist angle, comparing reference, UM1, and UM2 relaxed structures.
