@@ -14,6 +14,24 @@ import matplotlib as mpl
 SCRIPT_DIR = Path(__file__).parent
 DATA_DIR = SCRIPT_DIR / "data"
 
+# Explicit model file order matches the x-axis left-to-right sequence.
+# Intra: SW | Unified (rcut=6) | Split Allegro (rcut=6) | Unified (rcut=10) | Split MACE
+INTRA_MODEL_FILES = [
+    "sw_lammps_wse2_validation.xyz",
+    "baseline_02_all_valid.xyz",
+    "split_intra_03_small_all_valid.xyz",
+    "baseline_01_all_valid.xyz",
+    "split_mace_intra_wse2.xyz",
+]
+# Inter: KC | Unified | Split small NN | Split large NN | Split MACE inter
+INTER_MODEL_FILES = [
+    "kc_lammps_mos2_wse2_validation.xyz",
+    "baseline_01_all_valid.xyz",
+    "split_inter_02_small_all_valid.xyz",
+    "split_inter_03_all_valid.xyz",
+    "split_inter_01_all_valid.xyz",
+]
+
 FIGHEIGHT = 8
 FIGWIDTH = 4.2
 
@@ -108,8 +126,6 @@ def get_residuals(property_name: str, energy_prop: bool):
     if len(ground_truth_es.shape) > 1:
         multdimprop = True
 
-    basedir = DATA_DIR / "intra_WSe2"
-
     residualall = []
     rmseall = []
     model_es = np.mean(ground_truth_es) * np.ones(ground_truth_es.shape)
@@ -131,8 +147,8 @@ def get_residuals(property_name: str, energy_prop: bool):
     residualall.append(residuals)
     rmseall.append(rmse)
 
-    for item in sorted(basedir.iterdir()):
-        model_strucs = read(str(item), ":", format="extxyz")
+    for fname in INTRA_MODEL_FILES:
+        model_strucs = read(str(DATA_DIR / "intra_WSe2" / fname), ":", format="extxyz")
         model_es = np.array(
             [
                 get_property(property_name, atom=at)
@@ -161,8 +177,8 @@ def get_residuals(property_name: str, energy_prop: bool):
         residualall.append(residuals)
         rmseall.append(rmse)
 
-    data = (np.array(residualall)).T[:, np.array([0, 4, 1, 3, 2])]
-    rmse_data = (np.array(rmseall))[np.array([0, 4, 1, 3, 2])]
+    data = np.array(residualall).T
+    rmse_data = np.array(rmseall)
     return data, rmse_data
 
 
@@ -180,8 +196,6 @@ def get_residuals_inter(property_name: str, energy_prop: bool):
     if energy_prop:
         min_e_struc = np.argmin(ground_truth_es)
         ground_truth_es = ground_truth_es - ground_truth_es[min_e_struc]
-
-    basedir = DATA_DIR / "inter_MoS2WSe2"
 
     residualall = []
     rmseall = []
@@ -204,8 +218,8 @@ def get_residuals_inter(property_name: str, energy_prop: bool):
     residualall.append(residuals)
     rmseall.append(rmse)
 
-    for item in sorted(basedir.iterdir()):
-        model_strucs = read(str(item), ":", format="extxyz")
+    for fname in INTER_MODEL_FILES:
+        model_strucs = read(str(DATA_DIR / "inter_MoS2WSe2" / fname), ":", format="extxyz")
         model_es = np.array(
             [
                 get_property(property_name, atom=at)
@@ -233,8 +247,8 @@ def get_residuals_inter(property_name: str, energy_prop: bool):
         residualall.append(residuals)
         rmseall.append(rmse)
 
-    data = (np.array(residualall)).T[:, np.array([0, 5, 3, 1, 4])]
-    rmse_data = (np.array(rmseall))[np.array([0, 5, 3, 1, 4])]
+    data = np.array(residualall).T
+    rmse_data = np.array(rmseall)
     return data, rmse_data
 
 
