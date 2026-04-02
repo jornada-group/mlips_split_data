@@ -1,6 +1,6 @@
 # Figure 2 — Violin Plots of Model Accuracy
 
-This folder contains the data and plotting script to reproduce Figure 2 of the paper, which compares the accuracy (energy and force residuals) of various interatomic potential models for MoS₂/WSe₂ bilayer systems.
+This folder contains the data and plotting script to reproduce Figure 2 of the paper, which compares the accuracy (energy and force residuals) of various interatomic potential models for MoS2/WSe2 bilayer systems.
 
 ## Contents
 
@@ -9,8 +9,8 @@ fig2_violin_plots/
 ├── plot_fig2.py           # Plotting script for Figure 2
 ├── plot_fig_si2.py        # Plotting script for Supplementary Figure SI-2
 ├── matplotlib.rc          # Matplotlib style configuration
-├── fig_2_v8.pdf           # Figure 2 output (PDF)
-├── fig_2_v8.png           # Figure 2 output (PNG)
+├── fig_2.pdf           # Figure 2 output (PDF)
+├── fig_2.png           # Figure 2 output (PNG)
 ├── fig_si_2.pdf           # SI Figure 2 output (PDF)
 ├── fig_si_2.png           # SI Figure 2 output (PNG)
 └── data/
@@ -33,7 +33,7 @@ fig2_violin_plots/
 
 **Figure 2** (`plot_fig2.py`): Two-panel (2×1) violin plot comparing intralayer and interlayer energy-per-atom residuals. Models shown: random guessing, Stillinger-Weber / Kolmogorov-Crespi classical potentials, and Allegro unified/split models at two cutoff radii or network sizes.
 
-**SI Figure 2** (`plot_fig_si2.py`): Four-panel (2×2) violin plot extending Figure 2 to include both energy and force residuals, and adds the Split MACE model as an additional comparison point for both intra- and interlayer components.
+**SI Figure 1** (`plot_fig_si2.py`): Four-panel (2×2) violin plot extending Figure 2 to include both energy and force residuals, and adds the Split MACE model as an additional comparison point for both intra- and interlayer components.
 
 Each violin represents the full distribution of absolute residual errors over the DFT test set. Horizontal lines indicate target accuracy thresholds.
 
