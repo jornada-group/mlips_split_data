@@ -1,7 +1,11 @@
 # Supporting Data for "*Accurate, transferable, and verifiable machine-learned interatomic potentials for layered materials*"
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20128126.svg)](https://doi.org/10.5281/zenodo.20128126)
+
 This repository contains information and codes to reproduce the results in
 - Georgaras, Ramdas, Shan, Halsted, Berwyn, Li, Jornada, *Accurate, transferable, and verifiable machine-learned interatomic potentials for layered materials*, [arXiv:2503.15432](https://arxiv.org/abs/2503.15432).
+
+For the archived dataset release, cite the Zenodo record: [10.5281/zenodo.20128126](https://doi.org/10.5281/zenodo.20128126).
 
 Customizations to the MACE machine-learned interatomic potential (MLIP) to handle interlayer interactions are provided [in an external repository](https://github.com/jornada-group/mace-interlayer/tree/akash_interlayer_modify?tab=readme-ov-file#interlayer-mace). No customization is necessary for the Allegro MLIP for interlayer interactions, though we mark the version of Allegro we used for our calculations [here](https://github.com/jornada-group/allegro).
 
