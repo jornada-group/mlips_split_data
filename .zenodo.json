@@ -1,0 +1,59 @@
+{
+  "title": "Supporting data and code for: Accurate, transferable, and verifiable machine-learned interatomic potentials for layered materials",
+  "upload_type": "software",
+  "description": "Repository containing supporting data, model configuration files, trained surrogate models, and analysis/relaxation scripts for the paper Accurate, transferable, and verifiable machine-learned interatomic potentials for layered materials.",
+  "creators": [
+    {
+      "name": "Georgaras, Johnathan D.",
+      "affiliation": "Stanford University"
+    },
+    {
+      "name": "Ramdas, Akash",
+      "affiliation": "Stanford University"
+    },
+    {
+      "name": "Shan, Chung Hsuan",
+      "affiliation": "Stanford University"
+    },
+    {
+      "name": "Halsted, Elena",
+      "affiliation": "Stanford University"
+    },
+    {
+      "name": "Berwyn",
+      "affiliation": "Stanford University"
+    },
+    {
+      "name": "Li, Tianshu",
+      "affiliation": "Stanford University"
+    },
+    {
+      "name": "da Jornada, Felipe H.",
+      "affiliation": "Stanford University"
+    }
+  ],
+  "license": "mit",
+  "access_right": "open",
+  "version": "v1.0.0",
+  "keywords": [
+    "machine-learned interatomic potentials",
+    "MLIP",
+    "moire materials",
+    "van der Waals materials",
+    "Allegro",
+    "MACE",
+    "DFT"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://arxiv.org/abs/2503.15432",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://github.com/jornada-group/mlips_split_data",
+      "relation": "isSupplementedBy",
+      "resource_type": "software"
+    }
+  ]
+}
