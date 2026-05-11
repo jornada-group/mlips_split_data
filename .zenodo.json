@@ -1,6 +1,6 @@
 {
   "title": "Supporting data and code for: Accurate, transferable, and verifiable machine-learned interatomic potentials for layered materials",
-  "upload_type": "software",
+  "upload_type": "dataset",
   "description": "Repository containing supporting data, model configuration files, trained surrogate models, and analysis/relaxation scripts for the paper Accurate, transferable, and verifiable machine-learned interatomic potentials for layered materials.",
   "creators": [
     {
@@ -52,7 +52,7 @@
     },
     {
       "identifier": "https://github.com/jornada-group/mlips_split_data",
-      "relation": "isSupplementedBy",
+      "relation": "isSupplementTo",
       "resource_type": "software"
     }
   ]
